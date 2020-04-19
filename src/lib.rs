@@ -101,7 +101,7 @@ pub mod utils {
         let local: DateTime<Local> = Local::now();
         let now = local.format("%Y-%m-%dT%H:%M:%S%:z").to_string();
         // Now, let us work on the tempalte
-        let tera = compile_templates!("templates/**/*");
+        let tera = compile_templates!("saptaks_templates/**/*");
         let mut ctx = Context::new();
 
         ctx.insert("title", &inp);
@@ -645,7 +645,7 @@ pub mod libkhata {
         create_fdb();
         let mut fdb = get_fdb();
         let post_files = ls("./posts/".to_string());
-        let tera = compile_templates!("templates/**/*");
+        let tera = compile_templates!("saptaks_templates/**/*");
 
         for filename in post_files {
             if &filename.ends_with(".md") != &true {

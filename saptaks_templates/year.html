@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block header %}
+<title>Year</title>
+{% endblock header %}
+{% block body %}
+
+<!--Body content-->
+<div class="postbox">
+  <h1>Posts for year {{ ar.year }}</h1>
+  <ul class="unstyled">
+    {% for post in ar.posts %}
+    <li><a href="{{ post.url }}">[{{ post.sdate }}] <b>{{ post.title }}</b></a></li>
+    {% endfor %}
+  </ul>
+</div>
+<!--End of body content-->
+{% endblock body %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block header %}
+<title>{{ pdata.title }}</title>
+{% endblock header %}
+{% block body %}
+<div class="postbox">
+  <h1><a href="#">{{ pdata.title }}</a></h1>
+  <hr>
+  <small>
+    Posted: {{ pdata.sdate }} |
+
+
+    <a href="{{ pdata.slug}}.md">Source</a>
+    | More posts about
+    {% for key, value in pdata.tags %}
+    <a href="../categories/{{ key }}.html"><span class="badge badge-info">{{ value }}</span></a>
+    {% endfor %}
+  </small>
+  <hr>
+</div>
+{{ pdata.body | safe }}
+{% endblock body %}

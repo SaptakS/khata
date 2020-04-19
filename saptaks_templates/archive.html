@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block header %}
+<title>Archive</title>
+{% endblock header %}
+{% block body %}
+<div class="postbox">
+    <h1>Archive</h1>
+    <ul class="unstyled">
+        {% for ar in archives %}
+        <li><a href="{{ ar.year }}.html">{{ ar.year }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block header %}
+<title>Categories</title>
+{% endblock header %}
+{% block body %}
+
+<!-- Body content-->
+<h1>Tags</h1>
+<ul class="unstyled bricks">
+  {% for key, value in catpage.cats %}
+  <li><a class="reference" href="{{ key }}.html">{{ value }}</a></li>
+  {% endfor %}
+</ul>
+<!-- Body content ends here-->
+
+{% endblock body %}
