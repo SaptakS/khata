@@ -1,38 +1,31 @@
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
-  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.otf") format("opentype"), url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.woff") format("woff"), url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf") format("truetype");
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal; }
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf");
-  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.otf") format("opentype"), url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.woff") format("woff"), url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf") format("truetype");
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal; }
 @font-face {
   font-family: "Aileron";
-  src: url("../fonts/aileron.regular.ttf");
-  src: url("../fonts/aileron.regular.otf") format("opentype"), url("../fonts/aileron.regular.woff") format("woff"), url("../fonts/aileron.regular.ttf") format("truetype");
+  src: url("../fonts/aileron.regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal; }
 @font-face {
   font-family: "Aileron";
-  src: url("../fonts/aileron.bold.ttf");
-  src: url("../fonts/aileron.bold.otf") format("opentype"), url("../fonts/aileron.bold.woff") format("woff"), url("../fonts/aileron.bold.ttf") format("truetype");
+  src: url("../fonts/aileron.bold.otf") format("opentype");
   font-weight: 600;
-  font-style: normal; }
-@font-face {
-  font-family: "Arimo";
-  src: url("../fonts/Arimo/Arimo-Regular.ttf");
-  src: url("../fonts/Arimo/Arimo-Regular.otf") format("opentype"), url("../fonts/Arimo/Arimo-Regular.woff") format("woff"), url("../fonts/Arimo/Arimo-Regular.ttf") format("truetype");
-  font-weight: 400;
   font-style: normal; }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", sans-serif;
   color: #303030;
   line-height: 1;
   margin: 1.5rem auto;}
+  @media (prefers-color-scheme: dark) {
+    h1, h2, h3, h4, h5, h6 {
+      color: #ffffff; } }
 
 h1 {
   font-size: 4rem; }
@@ -49,7 +42,10 @@ h4 {
 
 h5 {
   font-size: 1.33rem;
-  color: #a8d4ad; }
+  color: #737373; }
+  @media (prefers-color-scheme: dark) {
+    h5 {
+      color: #a8d4ad; } }
 
 h6 {
   font-size: 1rem; }
@@ -70,6 +66,12 @@ a {
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
+  a:focus {
+    outline: none;
+    border: 2px dotted #164f6f; }
+    @media (prefers-color-scheme: dark) {
+      a:focus {
+        border-color: #ffffff; } }
 
 .secondary-text {
   color: #737373; }
@@ -123,14 +125,22 @@ body {
   .containers.container-light {
     background: #d4ddd5;
     color: #000000; }
-  .containers.container-dark {
-    background: #303030;
-    color: #d4ddd5; }
-    .containers.container-dark a {
-      color: #ffffff; }
+    @media (prefers-color-scheme: dark) {
+      .containers.container-light {
+        background: #000000;
+        color: #d4ddd5; } }
+  @media (prefers-color-scheme: dark) {
+    .containers {
+      background: #303030;
+      color: #d4ddd5; }
+      .containers a {
+        color: #ffffff; } }
   .containers .content-wrapper {
     margin: 0 auto;
     max-width: 75%; }
+    @media (min-width: 1900px) {
+      .containers .content-wrapper {
+        max-width: 60%; } }
 
     .content-wrapper img {
       max-width: 95%;
@@ -183,6 +193,20 @@ header {
   color: #303030;
   font-family: "Aileron", sans-serif;
   font-size: 1.25rem; }
+  @media (prefers-color-scheme: dark) {
+    header {
+      background-color: #000000;
+      color: #d4ddd5; }
+      header a {
+        color: #ffffff; } }
+  header h2 {
+    margin: 1rem 2rem;
+    margin-bottom: 0; }
+    @media (max-width: 514px) {
+      header h2 {
+        font-size: 1.25rem;
+        margin: 1rem;
+      } }
   header .menu-toggle {
     display: none; }
   header nav {
@@ -193,6 +217,11 @@ header {
       header nav ul li {
         list-style: none;
         margin: 0 1.5rem; }
+        @media (max-width: 514px) {
+          header nav ul li {
+            margin: 0 0.75rem;
+          }
+        }
         header nav ul li a {
           text-decoration: none;
           font-family: "Aileron", sans-serif;
@@ -212,9 +241,16 @@ header {
 /* Thanks to Mary Lou and Codrops for this code.
  * Visit the tutorial here: 
  * https://tympanus.net/codrops/2013/10/03/a-collection-of-separator-styles/ */
-#bigTriangleShadow #trianglePath1 {
+ @media (prefers-color-scheme: dark) {
+  #bigTriangleShadow {
+    background: #303030; } }
+ #bigTriangleShadow #trianglePath1 {
   fill: #d4ddd5;
   stroke: #d4ddd5; }
+  @media (prefers-color-scheme: dark) {
+    #bigTriangleShadow #trianglePath1 {
+      fill: #000000;
+      stroke: #000000; } }
 #bigTriangleShadow #trianglePath2 {
   fill: #737373;
   stroke: #737373; }
@@ -227,5 +263,19 @@ header {
   #curveDownColor path.light {
     fill: #ffffff;
     color: #ffffff; }
+    @media (prefers-color-scheme: dark) {
+      #curveDownColor path.light {
+        fill: #303030;
+        color: #303030; } }
+
+.postbox-separator {
+  margin: 6rem;
+  border-color: #303030;
+}
+@media (prefers-color-scheme: dark) {
+  .postbox-separator {
+    border-color: #d4ddd5;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
