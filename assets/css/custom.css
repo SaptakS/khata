@@ -65,6 +65,7 @@ p, div {
   font-size: 1.25rem; }
 
 a {
+  word-break: break-all;
   color: #164f6f;
   text-decoration: none; }
   a:hover {
