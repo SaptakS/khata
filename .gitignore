@@ -3,5 +3,6 @@
 Cargo.lock
 /output
 /posts/
+/assets/img/blog/
 conf.json
 .scrrdkdss.json

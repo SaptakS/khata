@@ -60,6 +60,13 @@ p, div {
   font-family: "Aileron", sans-serif;
   font-size: 1.25rem; }
 
+blockquote p:before {
+  content: open-quote;
+}
+blockquote p:after {
+  content: close-quote;
+}
+
 a {
   word-break: break-all;
   color: #164f6f;
